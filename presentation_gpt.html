@@ -1,0 +1,1178 @@
+Трансформація техпідтримки в Центр Знань 2026, gpt
+
+<!DOCTYPE html>
+
+<html lang="uk">
+<head>
+<meta charset="UTF-8">
+<title>Трансформація техпідтримки в Центр Знань 2026</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>
+  :root {
+    --bg-dark: #050816;
+    --bg-light: #F5F7FA;
+    --accent: #00A6B7;
+    --accent-soft: #E0F7FA;
+    --accent-strong: #0EA5E9;
+    --text-main: #111827;
+    --text-muted: #6B7280;
+    --danger: #DC2626;
+    --warning: #F59E0B;
+    --success: #16A34A;
+    --card-bg: #FFFFFF;
+  }
+
+* {
+  box-sizing: border-box;
+  }
+
+body {
+margin: 0;
+padding: 0;
+font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+background: radial-gradient(circle at top left, #E0F2FE 0%, #F5F7FA 45%, #E5E7EB 100%);
+color: var(--text-main);
+}
+
+.slides {
+width: 100vw;
+height: 100vh;
+overflow-x: hidden;
+overflow-y: auto;
+scroll-snap-type: y mandatory;
+}
+
+.slide {
+min-height: 100vh;
+padding: 40px 8vw 56px;
+display: flex;
+flex-direction: column;
+justify-content: center;
+scroll-snap-align: start;
+}
+
+.slide h1, .slide h2, .slide h3 {
+margin-top: 0;
+}
+
+.slide.title {
+background: radial-gradient(circle at top left, #1F2937 0%, #020617 55%, #000000 100%);
+color: #FFFFFF;
+position: relative;
+overflow: hidden;
+}
+
+.slide.title::before {
+content: "";
+position: absolute;
+inset: -40%;
+background:
+radial-gradient(circle at 10% 20%, rgba(56,189,248,0.16) 0, transparent 55%),
+radial-gradient(circle at 80% 0%, rgba(56,189,248,0.2) 0, transparent 60%),
+radial-gradient(circle at 90% 80%, rgba(34,197,94,0.18) 0, transparent 60%);
+opacity: 0.9;
+pointer-events: none;
+}
+
+.slide.title > * {
+position: relative;
+z-index: 1;
+}
+
+.label {
+font-size: 0.78rem;
+text-transform: uppercase;
+letter-spacing: 0.12em;
+color: var(--text-muted);
+margin-bottom: 6px;
+}
+
+.title .label {
+color: rgba(255,255,255,0.7);
+}
+
+.title h1 {
+font-size: clamp(2.1rem, 3.6vw, 3.4rem);
+margin-bottom: 16px;
+}
+
+.title .meta {
+display: flex;
+flex-wrap: wrap;
+gap: 10px;
+font-size: 0.9rem;
+margin-bottom: 22px;
+}
+
+.pill {
+padding: 6px 12px;
+border-radius: 999px;
+border: 1px solid rgba(255,255,255,0.18);
+display: inline-flex;
+align-items: center;
+gap: 6px;
+background: linear-gradient(135deg, rgba(15,23,42,0.85), rgba(15,23,42,0.4));
+color: rgba(249,250,251,0.95);
+}
+
+.pill-dot {
+width: 8px;
+height: 8px;
+border-radius: 999px;
+background: #22C55E;
+box-shadow: 0 0 0 4px rgba(34,197,94,0.35);
+}
+
+.subtitle {
+margin-top: 8px;
+max-width: 680px;
+opacity: 0.9;
+line-height: 1.6;
+font-size: 0.98rem;
+}
+
+.title-stats {
+display: grid;
+grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+gap: 16px;
+margin-top: 26px;
+max-width: 720px;
+}
+
+.stat-chip {
+padding: 12px 14px;
+border-radius: 16px;
+background: rgba(15,23,42,0.6);
+border: 1px solid rgba(148,163,184,0.5);
+font-size: 0.85rem;
+}
+
+.stat-label {
+color: rgba(148,163,184,0.95);
+margin-bottom: 4px;
+}
+
+.stat-value {
+font-weight: 600;
+color: #E5E7EB;
+}
+
+.hero-graphic {
+position: absolute;
+right: 8vw;
+bottom: 10%;
+width: min(320px, 32vw);
+max-width: 360px;
+aspect-ratio: 4 / 3;
+border-radius: 24px;
+background: radial-gradient(circle at 20% 20%, rgba(96,165,250,0.4) 0, transparent 55%),
+radial-gradient(circle at 80% 80%, rgba(45,212,191,0.4) 0, transparent 55%),
+rgba(15,23,42,0.9);
+border: 1px solid rgba(148,163,184,0.6);
+box-shadow: 0 30px 80px rgba(15,23,42,0.9);
+overflow: hidden;
+display: none;
+}
+
+@media (min-width: 960px) {
+.hero-graphic {
+display: block;
+}
+}
+
+.hero-graphic-inner {
+padding: 16px 16px 14px;
+color: #E5E7EB;
+font-size: 0.78rem;
+}
+
+.hero-header {
+display: flex;
+justify-content: space-between;
+align-items: center;
+margin-bottom: 10px;
+}
+
+.hero-pill {
+padding: 4px 8px;
+border-radius: 999px;
+background: rgba(15,118,110,0.7);
+font-size: 0.7rem;
+}
+
+.hero-dot {
+width: 7px;
+height: 7px;
+border-radius: 999px;
+background: #22C55E;
+}
+
+.hero-bars {
+margin-top: 6px;
+}
+
+.hero-bar-row {
+display: flex;
+align-items: center;
+gap: 8px;
+margin-bottom: 6px;
+}
+
+.hero-bar-label {
+width: 65px;
+color: rgba(209,213,219,0.9);
+}
+
+.hero-bar-track {
+flex: 1;
+height: 10px;
+border-radius: 999px;
+background: rgba(15,23,42,0.9);
+overflow: hidden;
+}
+
+.hero-bar-fill {
+height: 100%;
+border-radius: inherit;
+background: linear-gradient(90deg, #38BDF8, #22C55E);
+}
+
+.section-header {
+display: flex;
+align-items: baseline;
+justify-content: space-between;
+gap: 16px;
+margin-bottom: 14px;
+}
+
+.section-header h2 {
+font-size: clamp(1.5rem, 2.3vw, 2rem);
+}
+
+.tagline {
+font-size: 0.9rem;
+color: var(--text-muted);
+}
+
+.grid-2 {
+display: grid;
+grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+gap: 26px;
+}
+
+.card {
+background: var(--card-bg);
+border-radius: 18px;
+padding: 18px 20px 18px;
+box-shadow: 0 20px 50px rgba(15,23,42,0.08);
+}
+
+.card-outline {
+border: 1px solid rgba(15,23,42,0.06);
+background: rgba(255,255,255,0.9);
+}
+
+ul {
+margin: 3px 0 0;
+padding-left: 18px;
+font-size: 0.95rem;
+}
+
+li {
+margin-bottom: 6px;
+}
+
+.process-tag {
+display: inline-flex;
+align-items: center;
+gap: 6px;
+padding: 4px 10px;
+border-radius: 999px;
+background: rgba(15,23,42,0.04);
+font-size: 0.78rem;
+color: var(--text-muted);
+margin-bottom: 8px;
+}
+
+.process-dot-reactive {
+width: 9px;
+height: 9px;
+border-radius: 999px;
+background: #F97316;
+}
+
+.process-dot-proactive {
+width: 9px;
+height: 9px;
+border-radius: 999px;
+background: #22C55E;
+}
+
+.metric-row {
+display: flex;
+flex-wrap: wrap;
+gap: 14px;
+margin-top: 16px;
+}
+
+.metric {
+flex: 1 1 150px;
+background: #FFFFFF;
+border-radius: 14px;
+padding: 10px 12px;
+border: 1px dashed rgba(15,23,42,0.12);
+font-size: 0.88rem;
+}
+
+.metric-title {
+font-size: 0.78rem;
+color: var(--text-muted);
+margin-bottom: 4px;
+text-transform: uppercase;
+letter-spacing: 0.08em;
+}
+
+.metric-value {
+font-size: 0.95rem;
+font-weight: 600;
+}
+
+/* Візуальні плейсхолдери */
+.visual-row {
+display: grid;
+grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr);
+gap: 20px;
+margin-bottom: 14px;
+}
+
+.image-placeholder {
+border-radius: 16px;
+border: 2px dashed rgba(148,163,184,0.9);
+background:
+radial-gradient(circle at 0% 0%, rgba(191,219,254,0.5) 0, transparent 55%),
+radial-gradient(circle at 100% 100%, rgba(209,250,229,0.5) 0, transparent 55%),
+rgba(249,250,251,0.9);
+padding: 14px 14px 16px;
+display: flex;
+flex-direction: column;
+gap: 6px;
+}
+
+.image-placeholder-header {
+display: flex;
+align-items: center;
+gap: 8px;
+font-size: 0.86rem;
+font-weight: 600;
+color: #111827;
+}
+
+.image-placeholder-sub {
+font-size: 0.8rem;
+color: var(--text-muted);
+}
+
+.icon-circle {
+width: 28px;
+height: 28px;
+border-radius: 999px;
+background: radial-gradient(circle at 30% 20%, #FFFFFF 0, #BFDBFE 65%);
+display: inline-flex;
+align-items: center;
+justify-content: center;
+box-shadow: 0 10px 18px rgba(37,99,235,0.35);
+}
+
+.icon-circle svg {
+width: 16px;
+height: 16px;
+stroke: #1D4ED8;
+}
+
+/* Було/Стало схема */
+.before-after {
+display: grid;
+grid-template-columns: minmax(0, 1fr) 60px minmax(0, 1fr);
+gap: 12px;
+align-items: stretch;
+margin-top: 4px;
+}
+
+.ba-card {
+border-radius: 14px;
+padding: 10px 12px 12px;
+background: #FFFFFF;
+border: 1px solid rgba(148,163,184,0.5);
+font-size: 0.82rem;
+}
+
+.ba-title {
+font-weight: 600;
+margin-bottom: 4px;
+}
+
+.ba-label-reactive {
+font-size: 0.75rem;
+color: #B45309;
+}
+
+.ba-label-proactive {
+font-size: 0.75rem;
+color: #166534;
+}
+
+.ba-arrow {
+display: flex;
+align-items: center;
+justify-content: center;
+}
+
+.ba-arrow svg {
+width: 38px;
+height: 38px;
+stroke: #0EA5E9;
+}
+
+/* Gantt / дорожня карта */
+.roadmap-legend {
+display: flex;
+flex-wrap: wrap;
+gap: 10px;
+margin-bottom: 10px;
+font-size: 0.8rem;
+}
+
+.legend-item {
+display: inline-flex;
+align-items: center;
+gap: 6px;
+padding: 4px 9px;
+border-radius: 999px;
+background: rgba(15,23,42,0.04);
+}
+
+.legend-color {
+width: 12px;
+height: 6px;
+border-radius: 999px;
+}
+
+.gantt {
+width: 100%;
+border-radius: 16px;
+padding: 14px 16px;
+background: #FFFFFF;
+box-shadow: inset 0 0 0 1px rgba(15,23,42,0.04);
+}
+
+.gantt-header {
+display: flex;
+justify-content: space-between;
+font-size: 0.78rem;
+color: var(--text-muted);
+margin-bottom: 10px;
+}
+
+.gantt-row {
+margin-bottom: 9px;
+}
+
+.gantt-label {
+font-size: 0.82rem;
+margin-bottom: 4px;
+color: #111827;
+}
+
+.gantt-bar-track {
+width: 100%;
+height: 16px;
+border-radius: 999px;
+background: rgba(148,163,184,0.25);
+overflow: hidden;
+}
+
+.gantt-bar {
+height: 100%;
+border-radius: 999px;
+background: linear-gradient(90deg, #38BDF8, #22C55E);
+}
+
+/* Pie / ресурси */
+.pie-wrapper {
+display: flex;
+flex-wrap: wrap;
+gap: 22px;
+align-items: center;
+margin-top: 10px;
+}
+
+.pie {
+width: 180px;
+height: 180px;
+border-radius: 50%;
+background: conic-gradient(
+rgba(59,130,246,0.92) 0 130deg,
+rgba(45,212,191,0.9) 130deg 250deg,
+rgba(148,163,184,0.95) 250deg 360deg
+);
+position: relative;
+}
+
+.pie::after {
+content: "—";
+position: absolute;
+inset: 24%;
+border-radius: 50%;
+background: #FFFFFF;
+display: flex;
+align-items: center;
+justify-content: center;
+font-size: 1rem;
+color: var(--text-muted);
+}
+
+.pie-legend {
+flex: 1 1 180px;
+}
+
+.legend-row {
+display: flex;
+align-items: center;
+justify-content: space-between;
+margin-bottom: 6px;
+font-size: 0.88rem;
+}
+
+.legend-left {
+display: inline-flex;
+align-items: center;
+gap: 6px;
+}
+
+.legend-dot {
+width: 11px;
+height: 11px;
+border-radius: 50%;
+}
+
+.placeholder-value {
+font-size: 0.82rem;
+color: var(--text-muted);
+}
+
+/* Risk matrix */
+.risk-grid {
+display: grid;
+grid-template-columns: 70px minmax(0, 1fr);
+gap: 8px;
+margin-top: 10px;
+}
+
+.risk-matrix {
+display: grid;
+grid-template-columns: repeat(3, 1fr);
+grid-template-rows: repeat(3, 38px);
+border-radius: 10px;
+overflow: hidden;
+border: 1px solid rgba(15,23,42,0.08);
+background: #FFFFFF;
+}
+
+.risk-cell {
+border-right: 1px solid rgba(15,23,42,0.06);
+border-bottom: 1px solid rgba(15,23,42,0.06);
+font-size: 0.72rem;
+display: flex;
+align-items: center;
+justify-content: center;
+padding: 4px;
+text-align: center;
+}
+
+.risk-cell:nth-child(3),
+.risk-cell:nth-child(6),
+.risk-cell:nth-child(9) {
+border-right: none;
+}
+
+.risk-cell:nth-child(7),
+.risk-cell:nth-child(8),
+.risk-cell:nth-child(9) {
+border-bottom: none;
+}
+
+.risk-low { background: #E3FCEC; }
+.risk-med { background: #FEF9C3; }
+.risk-high { background: #FEE2E2; }
+
+.risk-axis {
+display: flex;
+align-items: center;
+justify-content: center;
+font-size: 0.72rem;
+color: var(--text-muted);
+writing-mode: vertical-rl;
+transform: rotate(180deg);
+}
+
+.risk-footnote {
+display: flex;
+justify-content: flex-end;
+margin-top: 4px;
+font-size: 0.72rem;
+color: var(--text-muted);
+}
+
+.risk-list {
+margin-top: 10px;
+font-size: 0.86rem;
+}
+
+.risk-item {
+display: flex;
+gap: 8px;
+margin-bottom: 6px;
+}
+
+.risk-badge {
+padding: 2px 8px;
+border-radius: 999px;
+font-size: 0.7rem;
+font-weight: 600;
+color: #FFFFFF;
+}
+
+.risk-badge.high { background: var(--danger); }
+.risk-badge.med { background: var(--warning); color: #1F2933; }
+.risk-badge.low { background: var(--success); }
+
+/* Q1 steps */
+.steps-grid {
+display: grid;
+grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr);
+gap: 20px;
+}
+
+.step-list {
+margin-top: 6px;
+font-size: 0.9rem;
+}
+
+.step-item {
+display: grid;
+grid-template-columns: 26px minmax(0, 1fr);
+gap: 8px;
+margin-bottom: 8px;
+}
+
+.step-index {
+width: 26px;
+height: 26px;
+border-radius: 999px;
+border: 1px solid rgba(37,99,235,0.4);
+display: flex;
+align-items: center;
+justify-content: center;
+font-size: 0.78rem;
+color: #1D4ED8;
+background: #EFF6FF;
+}
+
+.clarify-block {
+margin-top: 10px;
+padding: 10px 12px;
+border-radius: 14px;
+background: #FEF3C7;
+border: 1px solid #FBBF24;
+font-size: 0.86rem;
+}
+
+.clarify-title {
+font-weight: 600;
+margin-bottom: 4px;
+}
+
+.clarify-list {
+margin: 0;
+padding-left: 16px;
+}
+
+.clarify-list li {
+margin-bottom: 4px;
+}
+
+@media (max-width: 900px) {
+.grid-2,
+.visual-row,
+.steps-grid {
+grid-template-columns: minmax(0, 1fr);
+}
+
+```
+.slide {
+  padding: 32px 18px 40px;
+}
+```
+
+}
+
+@media (max-width: 600px) {
+.title-stats {
+grid-template-columns: minmax(0, 1fr);
+}
+} </style>
+
+</head>
+<body>
+<div class="slides">
+
+  <!-- СЛАЙД 1: ТИТУЛЬНИЙ -->
+
+  <section class="slide title">
+    <div class="label">Презентація для команди техпідтримки</div>
+    <h1>Трансформація техпідтримки в Центр Знань · 2026</h1>
+    <div class="meta">
+      <div class="pill">
+        <span class="pill-dot"></span>
+        <span>Автор: Керівник техпідтримки</span>
+      </div>
+      <div class="pill">
+        <span>Команда: 20 фахівців підтримки</span>
+      </div>
+      <div class="pill">
+        <span>Фокус: від «гасіння пожеж» до проактивності</span>
+      </div>
+    </div>
+    <p class="subtitle">
+      У 2026 році перетворюємо відділ техпідтримки на Центр Знань: менше хаотичних ескалацій,
+      більше прогнозованості та повторюваних рішень на базі якісної Бази Знань.
+      Ключові цілі: знизити частку ескалацій до ≤20% та скоротити онбординг новачків на 30%.
+    </p>
+
+```
+<div class="title-stats">
+  <div class="stat-chip">
+    <div class="stat-label">Мета 1</div>
+    <div class="stat-value">Ескалації ≤20% від усіх звернень</div>
+  </div>
+  <div class="stat-chip">
+    <div class="stat-label">Мета 2</div>
+    <div class="stat-value">Онбординг новачків −30% часу до самостійності</div>
+  </div>
+  <div class="stat-chip">
+    <div class="stat-label">Мета 3</div>
+    <div class="stat-value">Функціонуюча База Знань як «єдине джерело правди»</div>
+  </div>
+</div>
+
+<div class="hero-graphic" aria-hidden="true">
+  <div class="hero-graphic-inner">
+    <div class="hero-header">
+      <div class="hero-pill">
+        Центр Знань · 2026
+      </div>
+      <div style="display:flex;gap:4px;align-items:center;">
+        <div class="hero-dot"></div>
+        <span>Live KPIs</span>
+      </div>
+    </div>
+    <div style="font-size:0.78rem;color:#9CA3AF;margin-bottom:6px;">
+      Перехід від ручних рішень до повторюваних статей БЗ та конвеєра знань.
+    </div>
+    <div class="hero-bars">
+      <div class="hero-bar-row">
+        <div class="hero-bar-label">Ескалації</div>
+        <div class="hero-bar-track">
+          <div class="hero-bar-fill" style="width: 35%; background: linear-gradient(90deg,#F97316,#F97316);"></div>
+        </div>
+      </div>
+      <div class="hero-bar-row">
+        <div class="hero-bar-label">База знань</div>
+        <div class="hero-bar-track">
+          <div class="hero-bar-fill" style="width: 80%;"></div>
+        </div>
+      </div>
+      <div class="hero-bar-row">
+        <div class="hero-bar-label">Онбординг</div>
+        <div class="hero-bar-track">
+          <div class="hero-bar-fill" style="width: 70%; background: linear-gradient(90deg,#22C55E,#4ADE80);"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+```
+
+  </section>
+
+  <!-- СЛАЙД 2: ПОРІВНЯННЯ ПРОЦЕСІВ «БУЛО / СТАЛО» -->
+
+  <section class="slide">
+    <div class="section-header">
+      <h2>Як ми працюємо зараз і куди рухаємось</h2>
+      <div class="tagline">Від реактивної підтримки до Центру Знань</div>
+    </div>
+
+```
+<div class="visual-row">
+  <!-- Плейсхолдер під схему «Було/Стало» -->
+  <div class="image-placeholder">
+    <div class="image-placeholder-header">
+      <div class="icon-circle">
+        <svg viewBox="0 0 24 24" fill="none">
+          <path d="M5 7h4m6 0h4M7 7v10m10-10v10M5 17h4m6 0h4" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </div>
+      <span>Схема «Було/Стало»</span>
+    </div>
+    <div class="image-placeholder-sub">
+      Місце для візуальної схеми потоку звернення:
+      <strong>Користувач → L1 → L2 → Ескалація</strong> vs
+      <strong>Користувач → База Знань → L1 (за потреби)</strong>.
+    </div>
+    <div class="before-after">
+      <div class="ba-card">
+        <div class="ba-title">Було</div>
+        <div class="ba-label-reactive">Реактивний потік</div>
+        <div>Чати &amp; тікети → ескалації, мало стандартизованих рішень.</div>
+      </div>
+      <div class="ba-arrow">
+        <svg viewBox="0 0 24 24" fill="none">
+          <path d="M5 12h12M13 6l6 6-6 6" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </div>
+      <div class="ba-card">
+        <div class="ba-title">Стає</div>
+        <div class="ba-label-proactive">Проактивний потік</div>
+        <div>База Знань вирішує типові кейси, L1 фокусується на винятках &amp; покращеннях.</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="grid-2">
+    <div class="card card-outline">
+      <div class="process-tag">
+        <span class="process-dot-reactive"></span>
+        Поточна модель: «гасіння пожеж»
+      </div>
+      <div class="label">Як виглядає сьогодні</div>
+      <ul>
+        <li>Велика частина запитів розв’язується «з нуля» словами в чаті або в тікеті.</li>
+        <li>Ескалації летять до більш досвідчених спеціалістів навіть для повторюваних кейсів.</li>
+        <li>Онбординг новачків базується на «усній традиції» та парному навчанні.</li>
+        <li>Знання розпорошені між особистими нотатками, старими листами та архівними документами.</li>
+      </ul>
+    </div>
+
+    <div class="card card-outline">
+      <div class="process-tag">
+        <span class="process-dot-proactive"></span>
+        Цільова модель: Центр Знань
+      </div>
+      <div class="label">Як має бути у 2026</div>
+      <ul>
+        <li>Більшість стандартних кейсів закривається через актуальну Базу Знань.</li>
+        <li>Частка ескалацій ≤20%: ескалація тільки для справжніх «edge cases».</li>
+        <li>Онбординг новачків через готові сценарії, чеклісти та навчальні статті (−30% часу).</li>
+        <li>Чіткі ролі: хто створює, рев’ює та оновлює знання по кожному продукту/процесу.</li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<div class="metric-row">
+  <div class="metric">
+    <div class="metric-title">Фокус для команди</div>
+    <div class="metric-value">Менше хаосу в чатах, більше стандартизованих рішень у Базі Знань.</div>
+  </div>
+  <div class="metric">
+    <div class="metric-title">Роль кожного</div>
+    <div class="metric-value">Кожен фахівець підтримки = автор або рев’юер статей по своїх зонах.</div>
+  </div>
+  <div class="metric">
+    <div class="metric-title">Очікуваний ефект</div>
+    <div class="metric-value">Швидші відповіді, менше перевантаження L2, прозорий онбординг.</div>
+  </div>
+</div>
+```
+
+  </section>
+
+  <!-- СЛАЙД 3: ПЛАН ПО КВАРТАЛАХ + KPI + РЕСУРСИ -->
+
+  <section class="slide">
+    <div class="section-header">
+      <h2>План трансформації на 2026 рік</h2>
+      <div class="tagline">Дорожня карта по кварталах + ключові KPI</div>
+    </div>
+
+```
+<div class="card card-outline">
+  <div class="label">Дорожня карта змін</div>
+
+  <div class="roadmap-legend">
+    <div class="legend-item">
+      <span class="legend-color" style="background:#38BDF8;"></span>
+      <span>Q1 — Старт та фундамент Бази Знань</span>
+    </div>
+    <div class="legend-item">
+      <span class="legend-color" style="background:#22C55E;"></span>
+      <span>Q2 — Наповнення та зміна поведінки</span>
+    </div>
+    <div class="legend-item">
+      <span class="legend-color" style="background:#F97316;"></span>
+      <span>Q3 — Оптимізація, автоматизація &amp; аналітика</span>
+    </div>
+    <div class="legend-item">
+      <span class="legend-color" style="background:#6366F1;"></span>
+      <span>Q4 — Закріплення результатів та масштабування</span>
+    </div>
+  </div>
+
+  <div class="gantt">
+    <div class="gantt-header">
+      <span>2026 · Q1 – Q4</span>
+      <span>Точні дати спринтів — (уточнити)</span>
+    </div>
+
+    <div class="gantt-row">
+      <div class="gantt-label">Q1: Дизайн Бази Знань &amp; перші статті</div>
+      <div class="gantt-bar-track">
+        <div class="gantt-bar" style="width:24%; background:linear-gradient(90deg,#38BDF8,#0EA5E9);"></div>
+      </div>
+    </div>
+
+    <div class="gantt-row">
+      <div class="gantt-label">Q2: Масове наповнення + обов’язкове використання БЗ</div>
+      <div class="gantt-bar-track">
+        <div class="gantt-bar" style="width:24%; margin-left: 24%; background:linear-gradient(90deg,#22C55E,#4ADE80);"></div>
+      </div>
+    </div>
+
+    <div class="gantt-row">
+      <div class="gantt-label">Q3: Аналітика, оптимізація, автошаблони відповідей</div>
+      <div class="gantt-bar-track">
+        <div class="gantt-bar" style="width:24%; margin-left: 48%; background:linear-gradient(90deg,#F97316,#EA580C);"></div>
+      </div>
+    </div>
+
+    <div class="gantt-row">
+      <div class="gantt-label">Q4: Поширення практик за межі відділу, донавчання</div>
+      <div class="gantt-bar-track">
+        <div class="gantt-bar" style="width:24%; margin-left: 72%; background:linear-gradient(90deg,#6366F1,#8B5CF6);"></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="metric-row" style="margin-top:14px;">
+    <div class="metric">
+      <div class="metric-title">KPI ескалацій</div>
+      <div class="metric-value">До кінця 2026: ескалації ≤20% від усіх звернень.</div>
+    </div>
+    <div class="metric">
+      <div class="metric-title">KPI онбордингу</div>
+      <div class="metric-value">Скорочення часу до самостійної роботи новачків на 30%.</div>
+    </div>
+    <div class="metric">
+      <div class="metric-title">KPI використання БЗ</div>
+      <div class="metric-value">Частка звернень, вирішених через БЗ: — (уточнити цільове значення).</div>
+    </div>
+  </div>
+
+  <!-- Плейсхолдер під візуалізацію дорожньої карти -->
+  <div class="image-placeholder" style="margin-top:14px;">
+    <div class="image-placeholder-header">
+      <div class="icon-circle">
+        <svg viewBox="0 0 24 24" fill="none">
+          <path d="M4 7h4l2 5 3-8 2 6h5M4 18h16" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </div>
+      <span>Візуальна дорожня карта</span>
+    </div>
+    <div class="image-placeholder-sub">
+      Місце для графічної схеми з Q1–Q4, ключовими віхами та позначками цілей по eскалаціях та онбордингу.
+    </div>
+  </div>
+</div>
+
+<!-- Діаграма ресурсів: де беремо час/фокус команди -->
+<div class="card card-outline" style="margin-top:18px;">
+  <div class="label">Ресурси трансформації (оцінка)</div>
+  <div class="pie-wrapper">
+    <div class="pie" aria-label="Кругова діаграма розподілу ресурсів (значення потребують уточнення)"></div>
+    <div class="pie-legend">
+      <div class="legend-row">
+        <div class="legend-left">
+          <span class="legend-dot" style="background:rgba(59,130,246,0.92);"></span>
+          <span>Час команди підтримки на створення та рев’ю статей</span>
+        </div>
+        <span class="placeholder-value">— % (уточнити)</span>
+      </div>
+      <div class="legend-row">
+        <div class="legend-left">
+          <span class="legend-dot" style="background:rgba(45,212,191,0.9);"></span>
+          <span>Інструменти: Service Desk, База Знань, аналітика</span>
+        </div>
+        <span class="placeholder-value">— % (уточнити)</span>
+      </div>
+      <div class="legend-row">
+        <div class="legend-left">
+          <span class="legend-dot" style="background:rgba(148,163,184,0.95);"></span>
+          <span>Навчання, воркшопи та управління змінами</span>
+        </div>
+        <span class="placeholder-value">— % (уточнити)</span>
+      </div>
+      <p style="font-size:0.8rem;color:var(--text-muted);margin-top:8px;">
+        Конкретні обсяги часу та бюджет на інструменти мають бути погоджені окремо — (уточнити).
+      </p>
+    </div>
+  </div>
+
+  <!-- Плейсхолдер під діаграми ресурсів -->
+  <div class="image-placeholder" style="margin-top:12px;">
+    <div class="image-placeholder-header">
+      <div class="icon-circle">
+        <svg viewBox="0 0 24 24" fill="none">
+          <path d="M11 5h9M11 12h9M11 19h9M4 5h.01M4 12h.01M4 19h.01" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </div>
+      <span>Деталізовані діаграми ресурсів</span>
+    </div>
+    <div class="image-placeholder-sub">
+      Місце для бар-чартів/таблиць з реальними числами: години, бюджет, кількість статей по кварталах.
+    </div>
+  </div>
+</div>
+```
+
+  </section>
+
+  <!-- СЛАЙД 4: КОНКРЕТНІ КРОКИ НА Q1 + РИЗИКИ -->
+
+  <section class="slide">
+    <div class="section-header">
+      <h2>План дій на Q1 2026</h2>
+      <div class="tagline">Перші 90 днів: що робимо разом як команда</div>
+    </div>
+
+```
+<div class="steps-grid">
+  <!-- Ліва колонка: кроки Q1 + плейсхолдер -->
+  <div class="card card-outline">
+    <div class="label">5 ключових кроків Q1</div>
+    <div class="step-list">
+      <div class="step-item">
+        <div class="step-index">1</div>
+        <div>
+          <strong>Зафіксувати структуру Бази Знань.</strong><br>
+          Обрати категорії, теги, рівні доступу. Призначити власників знань по продуктах/процесах.
+        </div>
+      </div>
+      <div class="step-item">
+        <div class="step-index">2</div>
+        <div>
+          <strong>Виділити топ-20 типових кейсів.</strong><br>
+          Скласти список найчастіших запитів та ескалацій — саме під них створюємо перші статті.
+        </div>
+      </div>
+      <div class="step-item">
+        <div class="step-index">3</div>
+        <div>
+          <strong>Створити шаблон статті БЗ.</strong><br>
+          Єдиний формат: опис проблеми, симптоми, кроки вирішення, скріншоти, чекліст перевірок.
+        </div>
+      </div>
+      <div class="step-item">
+        <div class="step-index">4</div>
+        <div>
+          <strong>Запустити «вирішив → задокументував».</strong><br>
+          Кожен повторюваний кейс: спочатку стаття, потім — посилання на неї у відповіді користувачу.
+        </div>
+      </div>
+      <div class="step-item">
+        <div class="step-index">5</div>
+        <div>
+          <strong>Домовитись про вимірювання.</strong><br>
+          Визначити, як рахуємо ескалації, час онбордингу та використання БЗ — (уточнити метрики).
+        </div>
+      </div>
+    </div>
+
+    <!-- Плейсхолдер під схему Q1 -->
+    <div class="image-placeholder" style="margin-top:10px;">
+      <div class="image-placeholder-header">
+        <div class="icon-circle">
+          <svg viewBox="0 0 24 24" fill="none">
+            <path d="M5 3v18M5 19h14M9 15l3-4 2 2 4-5" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </div>
+        <span>Схема спринтів Q1</span>
+      </div>
+      <div class="image-placeholder-sub">
+        Місце для таймлайну Q1: спринти, дедлайни по першим статтям, воркшопам та релізу Бази Знань.
+      </div>
+    </div>
+  </div>
+
+  <!-- Права колонка: ризики Q1 + що уточнити -->
+  <div class="card card-outline">
+    <div class="label">Ключові ризики Q1 та як їх зменшити</div>
+
+    <div class="risk-grid">
+      <div class="risk-axis">
+        Вплив
+      </div>
+      <div class="risk-matrix">
+        <div class="risk-cell risk-low">Низький</div>
+        <div class="risk-cell risk-med">Середній</div>
+        <div class="risk-cell risk-high">Високий</div>
+
+        <div class="risk-cell risk-low"></div>
+        <div class="risk-cell risk-med">Нерівномірне навантаження</div>
+        <div class="risk-cell risk-high">Відсутність часу на документування</div>
+
+        <div class="risk-cell risk-low"></div>
+        <div class="risk-cell risk-med">Низька якість перших статей</div>
+        <div class="risk-cell risk-high">Опір переходу до Бази Знань</div>
+      </div>
+    </div>
+    <div class="risk-footnote">
+      Ймовірність →
+    </div>
+
+    <div class="risk-list">
+      <div class="risk-item">
+        <span class="risk-badge high">High</span>
+        <span><strong>«Немає часу писати статті, треба відповідати користувачам».</strong> 
+          Контрзаходи: планово закладаємо слоти під документацію, підтримуємо один одного, перший фокус — топ-20 кейсів.</span>
+      </div>
+      <div class="risk-item">
+        <span class="risk-badge med">Med</span>
+        <span><strong>Статті важко читати або ними незручно користуватись.</strong> 
+          Контрзаходи: єдиний шаблон, рев’ю старшими колегами, короткі й конкретні інструкції + приклади.</span>
+      </div>
+      <div class="risk-item">
+        <span class="risk-badge med">Med</span>
+        <span><strong>Команда продовжує працювати «по-старому» через чати.</strong>
+          Контрзаходи: нагадування у воркфлоу, швидкі демо, публічне відзначення тих, хто активно створює та використовує БЗ.</span>
+      </div>
+    </div>
+
+    <div class="clarify-block">
+      <div class="clarify-title">Що варто уточнити командою на старті</div>
+      <ul class="clarify-list">
+        <li>Які інструменти Бази Знань використовуємо у 2026 — (уточнити платформу).</li>
+        <li>Скільки годин на тиждень кожен може інвестувати в створення/оновлення статей — (уточнити).</li>
+        <li>Які конкретні цифри по ескалаціях та онбордингу беремо як базовий рівень — (уточнити).</li>
+      </ul>
+    </div>
+  </div>
+</div>
+```
+
+  </section>
+
+</div>
+<!-- :contentReference[oaicite:0]{index=0} -->
+</body>
+</html>
